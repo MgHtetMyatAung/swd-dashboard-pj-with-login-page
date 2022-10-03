@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="public/img/mmsit-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWD Dashboard</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="SWD Dashboard ">
+    <meta property="og:description" content="San Kyi Tar">
+    <meta property="og:image" content="./public/img/poe.jpg">
+
+  </head>
+  <body>
+    
+    <div class="container-fluid p-0">
+
+      <!-- for login section  -->
+      <div class="row min-vh-100 bg-primary g-0" id="login">
+        <div class="col-12 d-none d-lg-block col-lg-6">
+          <div class="login-img h-100">
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6" id="sign-in">
+          <div class="h-100 bg-white d-flex align-items-lg-center pt-5 pt-lg-0 justify-content-center">
+            <form action="" class="form w-50 pt-md-5 pt-lg-0 mt-5 mt-lg-0" id="sign-in-form">
+              <div class="d-flex align-items-center justify-content-center mb-lg-5 mt-md-5 mt-lg-0">
+                <img src="./public/img/mmsit-logo.png" width="35" alt="">
+                <h5 class="m-0">MMS IT</h5>
+              </div>
+              <p class=" text-center">Student Social Dashboard</p>
+              <h3 class="text-center my-4">Sign In</h3>
+              <div class="my-3">
+                <input type="text" name="name" id="name" minlength="4" maxlength="20" class=" form-control border-primary p-md-3" placeholder="user name" autofocus autocomplete="off" required>
+              </div>
+              <div class="position-relative">
+                <input type="password" name="password" id="pw" minlength="5" maxlength="15" class=" form-control border-primary p-md-3" placeholder="password" required>
+                <i class='bx bx-show' id="eye"></i>
+              </div>
+              <button type="submit" class="btn btn-primary w-50 mt-3 p-2 mx-auto d-block p-md-3 fs-6">Sign in</button>
+              <hr class="divider">
+              <div class=" d-flex justify-content-between mt-3">
+                <span class="fs-p" id="forgot-btn">Forgot password ?</span>
+                <span class="text-success fs-p" id="signup-btn">Sign up</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 d-none col-lg-6" id="sign-up">
+          <div class="h-100 bg-white d-flex align-items-lg-center pt-5 pt-lg-0 justify-content-center">
+            <form action="#" class="form w-50 pt-md-5 pt-lg-0 mt-5 mt-lg-0" id="sign-up-form">
+              <div class="d-flex align-items-center justify-content-center mb-lg-5 mt-md-5 mt-lg-0">
+                <img src="./public/img/mmsit-logo.png" width="35" alt="">
+                <h5 class="m-0">MMS IT</h5>
+              </div>
+              <p class=" text-center">Student Social Dashboard</p>
+              <h3 class="text-center my-4">Sign Up</h3>
+              <p class=" text-center text-warning d-none" id="warning">You will wait about 1 minute to create new account <i class='bx bxs-alarm' ></i> <span id="minute" class="text-danger"></span></p>
+              <div class="my-3">
+                <input type="text" name="su-name" id="su-name" minlength="4" maxlength="20" class=" form-control border-primary p-md-3" placeholder="user name" autocomplete="off" required>
+              </div>
+              <div class="position-relative">
+                <input type="password" name="su-password" id="supw" minlength="5" maxlength="15" class=" form-control border-primary p-md-3" placeholder="password" required>
+                <i class='bx bx-show' id="sueye"></i>
+              </div>
+              <!-- <div class="position-relative">
+                <input type="password" name="suc-password" id="sucpw" minlength="5" maxlength="15" class=" form-control border-primary p-md-3" placeholder="confirm password" required>
+                <i class='bx bx-show' id="suceye"></i>
+              </div> -->
+              <button type="submit" class="btn btn-primary w-50 mt-3 p-2 mx-auto d-block p-md-3 fs-6">Sign up</button>
+              <hr class="divider">
+              <div class=" d-flex justify-content-center mt-3">
+                <span class="text-success fs-p" id="signin-btn">Sign In ?</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 d-none col-lg-6" id="forgot">
+          <div class="h-100 bg-white d-flex align-items-lg-center pt-5 pt-lg-0 justify-content-center">
+            <form action="#" class="form w-50 pt-md-5 pt-lg-0 mt-5 mt-lg-0" id="forgot-form">
+              <div class="d-flex align-items-center justify-content-center mb-lg-5 mt-md-5 mt-lg-0">
+                <img src="./public/img/mmsit-logo.png" width="35" alt="">
+                <h5 class="m-0">MMS IT</h5>
+              </div>
+              <p class=" text-center">Student Social Dashboard</p>
+              <h3 class="text-center mt-4">Your Password</h3>
+              <p class="text-center text-warning">Please wait about 1 minute <i class='bx bxs-alarm' ></i> <span id="second" class=" text-danger"></span></p>
+              <div class="my-3">
+                <input type="text" name="fg-name" id="fg-name" minlength="4" maxlength="20" class=" form-control border-primary p-md-3" placeholder="user name" readonly>
+              </div>
+              <div class="position-relative">
+                <input type="text" name="fg-password" id="fgpw" minlength="5" maxlength="15" class=" form-control border-primary p-md-3" placeholder="password" readonly>
+              </div>
+              <hr class="divider">
+              <div class=" d-flex justify-content-center mt-3">
+                <span class="text-success fs-p" id="fg-btn">Sign In ?</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <!-- login end  -->
+
+
+
+
+      <div class="row g-0 d-none" id="main">
+
+        <!-- for sidebar  -->
+        <div class="col-12 col-lg-2 vh-100 secondary overflow-scroll" id="sidebar">
+
+            <div class="logo d-flex align-items-center justify-content-between p-3 sticky-top secondary">
+              <div class="d-flex align-items-center">
+                <img src="./public/img/mmsit-logo.png" alt="" class="rounded-circle">
+                <span class="fw-bold fs-4 t-l ms-2">MMS IT</span>
+              </div>
+              <div class="d-lg-none shadow-sm d-flex align-items-center justify-content-center p-2 p-md-3" id="close-nav">
+                <i class='bx bx-x fs-4 t-l' ></i>
+              </div>
+            </div>
+
+            <div class="lists px-3">
+              <ul class="p-0">
+                <li class="my-2 list-unstyled">
+                  <div class="d-flex align-items-center">
+                    <p class="mx-1 t-l">Main Menu</p>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-dashboard fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Dashboard</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center item-active list-item">
+                    <i class='bx bxs-message-dots fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Chat</span>
+                    <div class="ms-auto align-items-center">
+                      <span class="badge text-bg-danger">4</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item" id="s-arrow" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                    <i class='bx bxs-group fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Students</span>
+                    <div class="d-flex ms-auto align-items-center justify-content-center">
+                      <i class='bx bx-chevron-right fs-5 t-l pe-2' id="st-arrow"></i>
+                    </div>
+                  </div>
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body p-0 border-0">
+                      <ul class="p-0 border-0 secondary">
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">BWD Students</span>
+                        </li>
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">SWD Students</span>
+                        </li>
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">Workshop Students</span>
+                        </li>
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">Finished Students</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-graduation fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Teachers</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-dashboard fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">E-Learning</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-time fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Management</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bx-calendar-event fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Event</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-bar-chart-alt-2 fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Finance</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bx-share-alt fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Social</span>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item" id="e-arrow" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
+                    <i class='bx bxs-envelope fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Email</span>
+                    <div class="d-flex ms-auto align-items-center justify-content-center">
+                      <i class='bx bx-chevron-right fs-5 t-l pe-2' id="em-arrow"></i>
+                    </div>
+                  </div>
+                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card card-body p-0 border-0">
+                      <ul class="p-0 border-0 secondary">
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">Inbox</span>
+                        </li>
+                        <li class="list-item secondary border-0">
+                          <span class="t-l ms-4">Read Email</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list item my-1">
+                  <div class="rounded-end d-flex align-items-center list-item">
+                    <i class='bx bxs-cog fs-5 ms-3 t-l'></i>
+                    <span class="ms-3 t-l">Settings</span>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+        </div>
+        <!-- sidebar end  -->
+
+        <!-- for main body  -->
+        <div class="col-12 col-lg-10 vh-100 dark overflow-scroll m-0 p-0" id="main">
+            
+          <!-- nav bar  -->
+          <nav class="navbar sticky-top secondary shadow px-1 px-md-2 p-md-3">
+            <div class="container-fluid p-0">
+              <div class="d-lg-none">
+                <button type="button" class="btn position-relative" id="show-nav">
+                  <i class='bx bx-menu t-l fs-4'></i>
+                </button>
+              </div>
+              <form class="d-none d-md-flex w-50 form-w ms-lg-5" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              <div class="">
+                <ul class="d-flex justify-content-evenly ms-lg-auto pe-2 mb-2 mb-lg-0 align-items-center">
+                  <li class="nav-item ms-2 ms-md-3 list">
+                    <button type="button" class="btn position-relative">
+                      <i class='bx bxs-bell fs-4 t-l'></i>
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        9+
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
+                    </button>
+                  </li>
+                  <li class="nav-item ms-2 ms-md-3 list">
+                    <button type="button" class="btn position-relative">
+                      <i class='bx bxs-gift fs-4 t-l'></i>
+                      <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        7+
+                        <span class="visually-hidden">unread messages</span>
+                      </span> -->
+                    </button>
+                  </li>
+                  <li class="nav-item ms-2 ms-md-3 list">
+                    <button type="button" class="btn position-relative">
+                      <i class='bx bxs-file-plus fs-4 t-l'></i>
+                      <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                        3+
+                        <span class="visually-hidden">unread messages</span>
+                      </span> -->
+                    </button>
+                  </li>
+                  <li class="nav-item ms-2 ms-md-3 list">
+                    <button class="btn rounded-circle shadow secondary p-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <img src="./public/img/profile.jpg" width="40" class=" rounded-circle" alt="">
+                    </button>
+                  </li>
+                  <li class="nav-item ms-2 mx-md-3 list">
+                    <div class="d-flex align-items-center justify-content-center rounded-5" id="change-theme">
+                      <i class='bx bxs-sun fs-4 p-1 t-l rounded-circle' id="change-icon"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- nav bar end  -->
+
+          <div class="p-2 p-md-3">
+
+            <div class="row d-md-none mb-3">
+              <div class="col-12">
+                <div class="px-2 py-3 secondary rounded mt-2">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3" id="row-profile">
+              <!-- looping  -->
+            </div>
+
+            <div class="row g-3 mt-1">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 secondary rounded course-media-h">
+                  <div class="mb-3">
+                    <div class="text-center">
+                      <p class="t-l mb-0 fs-6">Your Subjects</p>
+                      <span class="t-l fs-p green">Master Classes</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <i class='bx bxs-chevron-left fs-5 t-l swiper-button-prev'></i>
+                      <i class='bx bxs-chevron-right fs-5 t-l swiper-button-next'></i>
+                    </div>
+                  </div>
+                  <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper" id="course-row">
+                        
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 secondary rounded">
+                  <div class="">
+                    <h6 class="t-l m-0">Your Progress Bar</h6>
+                  </div>
+                  <div>
+                    <canvas id="myChart"></canvas>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-1 g-3">
+              <div class="col-12 col-lg-6">
+                <div class="px-5 py-3 secondary rounded">
+                  <div class="">
+                    <h6 class="t-l text-center">Screen Times <span class="fs-p text-warning">( Daily )</span></h6>
+                  </div>
+                  <div class="px-md-5">
+                    <canvas id="myChart1" width="100" height="100"></canvas>
+                  </div>                  
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 secondary rounded overflow-scroll visiter" style="height: 400px;">
+                  <div class="mb-3">
+                    <h6 class="t-l m-0">Visiter Lists</h6>
+                    <span class=" text-warning fs-p">2020</span>
+                  </div>
+                  <table id="example" class="table table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="t-l">Name</th>
+                            <th class="t-l">Position</th>
+                            <th class="t-l">Office</th>
+                            <th class="t-l">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="t-l fs-p">Tiger Nixon</td>
+                            <td class="t-l fs-p">System Architect</td>
+                            <td class="t-l fs-p">Edinburgh</td>
+                            <td class="t-l fs-p">61</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Garrett Winters</td>
+                            <td class="t-l fs-p">Accountant</td>
+                            <td class="t-l fs-p">Tokyo</td>
+                            <td class="t-l fs-p">63</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Ashton Cox</td>
+                            <td class="t-l fs-p">Junior Technical Author</td>
+                            <td class="t-l fs-p">San Francisco</td>
+                            <td class="t-l fs-p">66</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Cedric Kelly</td>
+                            <td class="t-l fs-p">Senior Javascript Developer</td>
+                            <td class="t-l fs-p">Edinburgh</td>
+                            <td class="t-l fs-p">22</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Airi Satou</td>
+                            <td class="t-l fs-p">Accountant</td>
+                            <td class="t-l fs-p">Tokyo</td>
+                            <td class="t-l fs-p">33</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Zorita Serrano</td>
+                            <td class="t-l fs-p">Software Engineer</td>
+                            <td class="t-l fs-p">San Francisco</td>
+                            <td class="t-l fs-p">56</td>
+                        </tr>
+                        <tr>
+                            <td class="t-l fs-p">Jennifer Acosta</td>
+                            <td class="t-l fs-p">Junior Javascript Developer</td>
+                            <td class="t-l fs-p">Edinburgh</td>
+                            <td class="t-l fs-p">43</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Brenden Wagner</td>
+                          <td class="t-l fs-p">Software Engineer</td>
+                          <td class="t-l fs-p">San Francisco</td>
+                          <td class="t-l fs-p">28</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Fiona Green</td>
+                          <td class="t-l fs-p">Chief Operating Officer (COO)</td>
+                          <td class="t-l fs-p">San Francisco</td>
+                          <td class="t-l fs-p">48</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Shou Itou</td>
+                          <td class="t-l fs-p">Regional Marketing</td>
+                          <td class="t-l fs-p">Tokyo</td>
+                          <td class="t-l fs-p">20</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Michelle House</td>
+                          <td class="t-l fs-p">Integration Specialist</td>
+                          <td class="t-l fs-p">Sydney</td>
+                          <td class="t-l fs-p">37</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Suki Burks</td>
+                          <td class="t-l fs-p">Developer</td>
+                          <td class="t-l fs-p">London</td>
+                          <td class="t-l fs-p">53</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Prescott Bartlett</td>
+                          <td class="t-l fs-p">Technical Author</td>
+                          <td class="t-l fs-p">London</td>
+                          <td class="t-l fs-p">27</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Gavin Cortez</td>
+                          <td class="t-l fs-p">Team Leader</td>
+                          <td class="t-l fs-p">San Francisco</td>
+                          <td class="t-l fs-p">22</td>
+                        </tr>
+                        <tr>
+                          <td class="t-l fs-p">Martena Mccray</td>
+                          <td class="t-l fs-p">Post-Sales support</td>
+                          <td class="t-l fs-p">Edinburgh</td>
+                          <td class="t-l fs-p">46</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="t-l">Name</th>
+                            <th class="t-l">Position</th>
+                            <th class="t-l">Office</th>
+                            <th class="t-l">Age</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content social-profile">
+                  <div class="modal-header">
+                    <h6 class="modal-title t-l" id="exampleModalLabel">Profile</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="d-flex align-items-center px-2">
+                      <img src="./public/img/profile.jpg" width="65" alt="" class="rounded-circle">
+                      <div class="d-flex flex-column ms-5 align-items-start" value="4">
+                        <h6 class="t-l m-0">Kyaw Gyi</h6>
+                        <p class="text-warning fs-p mt-2 mb-0 ms-0">SWD Student</p>
+                        <span class="green fs-p view" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Profile</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-primary">Log out</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- profile details Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content social-profile">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"><i class='bx bx-menu-alt-left fs-4 text-primary'></i></h5>
+                    <button type="button" class="btn d-flex align-items-center justify-content-end" data-bs-dismiss="modal"><i class='bx bx-x fs-4 text-primary'></i></button>
+                  </div>
+                  <div class="modal-body overflow-scroll" style="max-height: 400px;">
+                    <div id="card-body">
+
+                    </div>
+                  </div>
+                  <div class="modal-footer justify-content-evenly">
+                    <button type="button" class="btn btn-sm btn-secondary d-flex align-items-center py-2 px-3"><i class='bx bxs-user-check fs-5'></i><span class="ms-1">Classmate</span></button>
+                    <button type="button" class="btn btn-sm btn-primary d-flex align-items-center py-2 px-3"><i class='bx bxl-messenger fs-5'></i><span class="ms-1">Message</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- for footer  -->
+            <footer class="mt-auto">
+              <div class="row secondary mt-3">
+                <div class="col-12 g-3">
+                  <div class="secondary p-3 px-md-5 mb-2 d-flex justify-content-between">
+                    <h5 class="t-l m-0">MMS <span class="text-danger">IT</span></h5>
+                    <p class=" t-l mb-0">SWD Dashboard</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+
+        </div>
+        <!-- main body end  -->
+
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

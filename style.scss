@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+  --dark: #EFEFEF;
+  --secondary: white;
+  --light: #06283D;
+  --info: #cef1f8;
+  --active: #5BB318;
+  --blue: #0d88fb;
+  --green: #2ed4b0e8;
+}
+
+.theme-active{
+  --primary: #47B5FF;
+  --dark: #06283D;
+  --secondary: #07304a;
+  --dark-green: #256D85;
+  --yellow: #FFDE00;
+  --info: #0f4769;
+  --light: white;
+  --blue: #F2F2F2;
+}
+
+*{
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.dark{
+  background-color: var(--dark) !important;
+  color: white;
+}
+.green{
+  color: var(--green) !important;
+}
+.info{
+  background-color: var(--info);
+}
+.dark-green{
+  background-color: var(--dark-green);
+}
+.secondary{
+  background-color: var(--secondary);
+}
+.brc{
+  border: 2px solid var(--light);
+}
+.t-l{
+  color: var(--light);
+}
+.list{
+  list-style: none;
+  cursor: pointer;
+}
+
+#sidebar{
+  cursor: pointer;
+  user-select: none;
+}
+
+.item .list-item{
+  padding: 10px 10px !important;
+  list-style: none !important;
+  transition: 0.3s;
+}
+
+.list-item:hover{
+  background-color: var(--info);
+  border-left: 5px solid red !important;
+}
+
+.bxs-moon{
+  color: var(--yellow) !important;
+}
+
+.item-active{
+  background-color: var(--info);
+  border-left: 5px solid red !important;
+}
+
+#st-arrow{
+  transition: 0.3s;
+}
+#em-arrow{
+  transition: 0.3s;
+}
+.rotate{
+  transform: rotate(90deg);
+}
+
+
+
+// for sidebar 
+.logo{
+  img{
+    width: 50px;
+  }
+}
+
+// for profiles 
+.profile{
+  width: 65px;
+}
+.active-now{
+  padding: 6px;
+  background-color: var(--active);
+  border-color: var(--secondary) !important;
+}
+.fs-p{
+  font-size: 15px;
+}
+
+.social-profile{
+  background-color: var(--secondary) !important;
+}
+.modal{
+  --bs-modal-header-border-color: none !important;
+}
+.b-c{
+  border-color: var(--blue) !important;
+}
+.detail-img{
+  width: 100%;
+  height: 230px !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+// for courses 
+#course{
+  background: linear-gradient(rgba(50,50,50,0.7),rgba(50,50,70,0.8)),url('./public/img/card-img.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.fs-c{
+  font-size: 13px !important;
+}
+.course-slide{
+  cursor: pointer;
+}
+
+
+// for modal box 
+.show-modal{
+  z-index: 2000;
+}
+
+
+// for login page 
+.login-img{
+  background: linear-gradient(rgba(50,50,50,0.5),rgba(50,50,50,0.6)),url('./public/img/card-img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#eye, #sueye, #suceye{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 20px;
+}
+
+input[type='text'],input[type='password']{
+  font-size: 18px;
+  padding: 10px 10px;
+}
+
+.divider{
+  background-color: black !important;
+}
+
+
+@import 'animate.css';
+@import 'boxicons/css/boxicons.min.css';
+@import 'bootstrap/scss/bootstrap';
+// @import 'dataTables.net-dt/css/jquery.dataTables.min.css';
+
+
+@media (min-width: 1600px) { 
+  .course-media-h{
+    min-height: 100% !important;
+    padding: 30px 20px !important;
+  }
+  .course-media{
+    padding: 40px 20px !important;
+  }
+  .media-h{
+    margin-top: 30px !important;
+  }
+
+  .visiter{
+    min-height: 100% !important;
+  }
+ }
+
+@include media-breakpoint-down(lg) {
+  #sidebar{
+    position: fixed;
+    width: 50% !important;
+    transform: translateX(-500px);
+    transition: 0.5s;
+    z-index: 1500;
+  }
+  
+  .form-w{
+    width: 40% !important;
+  }
+
+  #sidebar.active-nav{
+    transform: translateX(0px);
+  }
+
+  .fs-p{
+    font-size: 13px;
+  }
+
+}
+
+@include media-breakpoint-down(sm) {
+  #sidebar{
+    width: 70% !important;
+  }
+
+  .logo span{
+    font-size: 18px !important;
+  }
+
+  .detail-img{
+    height: 200px !important;
+  }
+  
+  .fs-p{
+    font-size: 13px;
+  }
+
+  .form{
+    width: 75% !important;
+  }
+
+}
+
+
+
+
+
